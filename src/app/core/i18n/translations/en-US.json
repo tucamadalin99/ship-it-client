@@ -1,0 +1,9 @@
+{
+  "app": {
+    "title": "Frontend Platform Kit"
+  },
+  "home": {
+    "title": "Home",
+    "welcome": "Welcome!"
+  }
+}
