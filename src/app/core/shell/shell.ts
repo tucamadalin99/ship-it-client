@@ -1,6 +1,6 @@
 import { Component, DestroyRef, inject, OnInit } from '@angular/core';
 import { Header } from './components/header/header';
-import { Router, RouterOutlet } from '@angular/router';
+import { ActivatedRoute, Router, RouterOutlet } from '@angular/router';
 import { Footer } from './components/footer/footer';
 import { GlobalErrorHandlerService } from '../error-handling/global-error-handler.service';
 import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
@@ -22,7 +22,10 @@ export class Shell implements OnInit {
 
   private readonly _router = inject(Router);
 
+  private readonly _route = inject(ActivatedRoute);
+
   ngOnInit(): void {
+    console.log('CURRENT ROUTE', this._route.snapshot.url);
     this._globalErrorHandler.errorSubject$
       .pipe(takeUntilDestroyed(this._destroyRef))
       .subscribe((_) => {

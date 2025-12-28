@@ -19,5 +19,5 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/not-found/not-found').then((c) => c.NotFound),
   },
   // fallback
-  { path: '**', redirectTo: '' },
+  { path: '**', redirectTo: 'not-found' },
 ];
